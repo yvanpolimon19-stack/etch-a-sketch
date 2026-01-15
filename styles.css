@@ -9,6 +9,7 @@ body{
     width:960px;
     height:960px;
     flex-wrap:wrap;
+    border:1px solid black;
 }
 .hovered{
     background-color:black;
@@ -20,6 +21,6 @@ body{
     flex:1 1 auto;
 }
 .square{
-    border:1px solid black;
+    /*border:1px solid black;*/
     flex:1 1 auto;
 }
