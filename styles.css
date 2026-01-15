@@ -1,12 +1,23 @@
 .square{
     border:1px solid black;
-    width:10px;
-    height:10px;
+    width:55px;
+    height:55px;
+
 }
 .container{
     display:flex;
-    width:200px;
-    height:200px;
+    width:960px;
+    height:960px;
     flex-wrap:wrap;
     gap:0px;
+}
+.hovered{
+    background-color:black;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
 }
