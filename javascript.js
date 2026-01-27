@@ -70,31 +70,31 @@ function handleMouseEnter(){
     let randomNumber = Math.random()
     if(randomNumber < 0.333){
         const element = event.target;
-        element.classList.add("hovered-red");
-        /*controlOpacity(element);*/
+        element.className = "square hovered-red";
+        controlOpacity();
     }
     else if(randomNumber < 0.666){
         const element = event.target;
-        element.classList.add("hovered-blue");
-        /*controlOpacity(element);*/
+        element.className = "square hovered-blue";
+        controlOpacity();
     }
     else{
         const element = event.target;
-        element.classList.add("hovered-green");
-        /*controlOpacity(element);*/
+        element.className = "square hovered-green";
+        controlOpacity();
     }
 }
 function handleMouseLeave(){
     const element = event.target;
-    element.className = "";
+    element.className = "square trail";
+    
+     
 }
-
-/*function controlOpacity(el){
-    let currentOpacity = parseFloat(el.style.opacity) || 0; 
-    el.style.opacity = Math.min(currentOpacity + 0.1, 1); 
+function controlOpacity(){
+    const trailed = document.querySelectorAll(".trail");
+    trailed.forEach(item => {
+        item.style.opacity += 0.1;
+    });
 
 }
-*/
-
-
 
