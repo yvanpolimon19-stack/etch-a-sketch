@@ -11,10 +11,6 @@ body{
     flex-wrap:wrap;
     border:1px solid black;
 }
-.hovered{
-    background-color:black;
-}
-
 .row{
     width:960px;
     display:flex;
@@ -23,4 +19,17 @@ body{
 .square{
     /*border:1px solid black;*/
     flex:1 1 auto;
+}
+
+.hovered-red{
+    background-color:red;
+    opacity:"0.0";
+}
+.hovered-green{
+    background-color:green;
+    opacity:"0.0";
+}
+.hovered-blue{
+    background-color:blue;
+    opacity:"0.0";
 }

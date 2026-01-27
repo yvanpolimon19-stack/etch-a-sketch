@@ -67,15 +67,34 @@ promptButton.addEventListener("click", ()=>{
 
 
 function handleMouseEnter(){
-    const element = event.target;
-    element.classList.add("hovered");
+    let randomNumber = Math.random()
+    if(randomNumber < 0.333){
+        const element = event.target;
+        element.classList.add("hovered-red");
+        /*controlOpacity(element);*/
+    }
+    else if(randomNumber < 0.666){
+        const element = event.target;
+        element.classList.add("hovered-blue");
+        /*controlOpacity(element);*/
+    }
+    else{
+        const element = event.target;
+        element.classList.add("hovered-green");
+        /*controlOpacity(element);*/
+    }
 }
 function handleMouseLeave(){
     const element = event.target;
-    element.classList.remove("hovered");
+    element.className = "";
 }
 
+/*function controlOpacity(el){
+    let currentOpacity = parseFloat(el.style.opacity) || 0; 
+    el.style.opacity = Math.min(currentOpacity + 0.1, 1); 
 
+}
+*/
 
 
 
