@@ -55,10 +55,12 @@ promptButton.addEventListener("click", ()=>{
     createBoard(userNumber);
     
     const squares = document.querySelectorAll(".square");
+    controlOpacity();
     
     squares.forEach((element)=>{
     element.addEventListener("mouseover",handleMouseEnter);
     element.addEventListener("mouseout",handleMouseLeave);
+    
     });
 });
 
@@ -67,34 +69,27 @@ promptButton.addEventListener("click", ()=>{
 
 
 function handleMouseEnter(){
-    let randomNumber = Math.random()
-    if(randomNumber < 0.333){
-        const element = event.target;
-        element.className = "square hovered-red";
-        controlOpacity();
-    }
-    else if(randomNumber < 0.666){
-        const element = event.target;
-        element.className = "square hovered-blue";
-        controlOpacity();
-    }
-    else{
-        const element = event.target;
-        element.className = "square hovered-green";
-        controlOpacity();
-    }
+    const element = event.target;
+    element.classList.add("hovered");  
 }
+    
 function handleMouseLeave(){
     const element = event.target;
-    element.className = "square trail";
-    
-     
+    element.classList.remove("hovered");
 }
-function controlOpacity(){
-    const trailed = document.querySelectorAll(".trail");
-    trailed.forEach(item => {
-        item.style.opacity += 0.1;
-    });
-
-}
-
+function controlOpacity() {
+    const trailed = document.querySelectorAll(".square");
+    trailed.forEach((item) => {
+        item.addEventListener("mouseout", function(event) {
+            const element = event.target;
+            const baseOpacity = window.getComputedStyle(element).opacity;
+            
+            let newOpacity = parseFloat(baseOpacity) + 0.1;
+            
+            Object.assign(element.style, {
+                backgroundColor: "black",
+                opacity:newOpacity 
+            });
+        }); 
+    }); 
+} 
